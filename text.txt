@@ -1,0 +1,19 @@
+# first pip install virtualenv
+# type virtualenv env
+# activate by going to the directory eg: env\Scripts\activate.bat
+# run it using flask run or python app.py
+
+
+Now to render the html
+1. make a folder named templates and inside it, make a file name index.html
+2. make a folder named static and inside it create folder named css
+3. make css file inside that static/css folder
+4. in the app.py from flask import Flask, render_template, url_for
+    change this
+    @app.route('/')
+    def index():
+        return render_template('index.html')
+
+5. now go to your html file, on the head section
+   write this
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css' )}}">

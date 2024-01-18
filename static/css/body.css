@@ -1,0 +1,97 @@
+body,html{
+    height:100;
+  }
+   *{
+      box-sizing:border-box;
+    }
+  
+    .bg-img{
+      background-image: url("maxresdefault.jpg");
+      min-height: 700px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+  
+    *.container{
+      position: absolute;
+      margin: 25px;
+      width: 350px;
+      height: 480px;
+      padding: 16px;
+      background-color: rgba(10, 156, 148, 0.394);
+    }
+   
+    input[type=text], input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccccccdb;
+      box-sizing: border-box;
+    }
+    
+   
+    button {
+      background-color: #0a754e;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    select {
+      width: 318px;
+      height: 40px;
+    }
+   
+    button:hover {
+      opacity: 0.7;
+    }
+    
+   
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+   
+    .SignupBtn {
+      width:auto;
+      padding: 10px 18px;
+      background-color: chocolate;
+    }
+   
+    .imgcontainer {
+      text-align: center;
+      margin: 12px 0 12px 0;
+    }
+    
+   
+    img.avatar {
+      width: 20%;
+      border-radius: 100%;
+    }
+    .container {
+      padding: 16px;
+    }
+    
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+   
+    @media screen and (max-width: 300px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+      .cancelbtn {
+        width: 100%;
+      }
+    }

@@ -1,0 +1,71 @@
+ 
+.opt{
+    
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;
+    color: #147b9a;
+    
+    
+    position: absolute;
+    width: 100vw;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    height: 80px;
+    line-height: 1px;
+    padding: 2px 30px;
+    
+ 
+}
+.opt ul li {
+    display: inline;
+    
+}
+.opt ul li a{
+    font-size: 30px;
+
+}
+.options li a{
+    font-size: 20px;
+    margin: 5px;
+    padding: 5px;
+    transition: all .2s linear;
+    color: #095e7d;
+    
+}
+.options li a:hover{
+border: 1px solid transparent;
+border-radius: 30px;
+font-weight: bold;
+padding: 10px;
+
+background-color: #fff;
+text-shadow: #000;
+
+}
+.bg-img{
+    border: solid #095e7d;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('AdobeStock_369208839-scaled-1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    animation-name: photo-slide;
+    animation-duration: 30s;
+    animation-delay: .5s;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+    transition: animation .5s ease-in-out;
+    animation-direction:normal;
+    color: #c987e1;
+    
+}
+ 
+    

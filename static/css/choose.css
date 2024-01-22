@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+ 
+body{
+    background-color: #b96cf4;
+    background: linear-gradient(to right, #d7a7ea, #b96cf4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    border-radius: 10%;
+}
+.choose{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+
+}
+ 
+
+ .choose h1{
+    font-size: 15px;
+ }
+
+
+.choose button{
+    background-color: #08b651;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor:pointer;
+}
+
+.choose form{
+    background-color: #e2e2e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 40px;
+    border-radius: 10%;
+    
+
+}
+
+.Adimn form{
+     
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 40px;
+   
+}
+
+.Admin h2{
+    font-size: 15px;
+}
+
+.Admin button{
+    background-color: #08b651;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+ 
+ 
+ 

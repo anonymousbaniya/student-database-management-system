@@ -1,5 +1,5 @@
 from flask import Flask, render_template, url_for
-
+from templates.database import admin_session
 
 app = Flask(__name__)
 
@@ -9,10 +9,11 @@ def index():
 
 
 
-
 @app.route('/signup')
 def admin():
+    admin_session()
     return render_template('signup.html')
+
 
 
 if __name__ == "__main__":

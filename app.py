@@ -10,11 +10,19 @@ command_handler = db.cursor(buffered=True)
 
 @app.route('/')
 def index():
-    print(request)
     return render_template('homepage.html')
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == "POST":
+        username = request.form.get("username")
+        password = request.form.get("password")
+        print("Username: " + username)
+        print("Password: " + password)
+        query_vals = (username,password)
+        command_handler.execute("INSERT INTO students (username,password,privilage) VALUES (%s,%s,'teacher')",query_vals)
+        db.commit()
+
    
     return render_template('loginchoose.html')
 
@@ -24,6 +32,8 @@ def admin():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        print(username)
+        print(password)
         if username == "admin" and password == "password":
             admin_session()  
             

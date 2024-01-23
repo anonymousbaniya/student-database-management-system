@@ -23,15 +23,14 @@
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
-                
+            <form method="POST" action="{{ url_for('login') }}">
                 <h1>Sign In</h1>
                 <span>This option will be available soon!!</span>
                 <span>Enter your email and password</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input type="text" name="username" placeholder="username">
+                <input type="password" name="password" placeholder="Password">
                 <a href="#">Forget Your Password?</a>
-                <button>Sign In</button>
+                <button type="submit">Sign In</button>
             </form>
         </div>
         <div class="toggle-container">
@@ -50,6 +49,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
 </body>
 </html>

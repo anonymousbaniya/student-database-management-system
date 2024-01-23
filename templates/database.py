@@ -11,14 +11,14 @@ def admin_session():
         print("2. Register new Teacher")
         print("3. Delete Existing Student")
         print("4. Delete Existing Teacher")
-        print("5. Logout")
+        print("5. Log out")
 
         user_option = input(str("Option : "))
         if user_option == "1":
             print("")
             print("Register New Student")
-            username = admin
-            password = password 
+            username = input(str(" username:"))
+            password = input(str(" password:"))
             query_vals = (username,password)
             command_handler.execute("INSERT INTO students (username,password,privilage) VALUES (%s,%s,'student')",query_vals)
             db.commit()
@@ -51,12 +51,14 @@ def admin_session():
             print("Delete Existing Teacher Account")
             username = input(str("Teacher username : "))
             query_vals = (username,"teacher")
-            command_handler.execute("DELETE FROM stuednts WHERE username = %s Age = %s ",query_vals)
+            command_handler.execute("DELETE FROM students WHERE username = %s Age = %s ",query_vals)
             db.commit()
             if command_handler.rowcount < 1:
                 print("User not found")
             else:
                 print(username + " has been deleted")
+            
+       
 
         elif user_option == "5":
             break
@@ -96,4 +98,4 @@ def main():
         else:
             print("No valid option was selected")
 
-main()
+

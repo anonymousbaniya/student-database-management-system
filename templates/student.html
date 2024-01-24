@@ -12,34 +12,32 @@
 <body>
 
     <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form method="POST" action="{{ url_for('student') }}">            
-                <input type="text" name="Rollno" placeholder="Rollno">
-                <input type="text" name="S_Name" placeholder="S_Name">
-                <input type="text" name="Class" placeholder="Your class">
-                <input type="text" name="Address" placeholder="Address">
-                <input type="text" name="parentsNumber" placeholder="ParentsNumber">
-                <input type="text" name="parentsName" placeholder="ParentsNAME">
-                <button type="submit">Register</button>
+      
+        <div class="form-container sign-in">
+            
+                <h1>Create Account</h1>
+                <form method="POST" action="{{ url_for('student') }}">            
+                    <input type="text" name="Rollno" placeholder="Rollno">
+                    <input type="text" name="S_Name" placeholder="S_Name">
+                    <input type="text" name="Class" placeholder="Your class">
+                    <input type="text" name="Address" placeholder="Address">
+                    <input type="text" name="parentsNumber" placeholder="ParentsNumber">
+                    <input type="text" name="parentsName" placeholder="ParentsNAME">
+               <a href="face.html"><input type="submit"></a>
             </form>
         </div>
-        
         <div class="toggle-container">
             <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Welcome!</h1>
-                    <p>Already Registered ?</p>
-                    <button class="hidden" id="login">Sign In</button>
-                </div>
+             
                 <div class="toggle-panel toggle-right">
                     <h1>Hello, Student!</h1>
-                    <p>Don't have an account?</p>
-                    <button class="hidden" id="register">Sign Up</button>
+                
+                  
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="{{url_for('static', filename='js/script.js')}}"></script>
+     
 </body>
 </html>

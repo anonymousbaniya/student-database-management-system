@@ -14,14 +14,7 @@ def index():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    if request.method == "POST":
-        username = request.form.get("username")
-        password = request.form.get("password")
-        print("Username: " + username)
-        print("Password: " + password)
-        query_vals = (username,password)
-        command_handler.execute("INSERT INTO students (username,password,privilage) VALUES (%s,%s,'teacher')",query_vals)
-        db.commit()
+   
 
    
     return render_template('loginchoose.html')
@@ -40,14 +33,39 @@ def admin():
     return render_template('admin.html')
 
 
-@app.route('/student')
-def student_info():
+@app.route('/student', methods=['GET', 'POST'])
+def student():
+    if request.method == "POST":
+        Rollno = request.form.get("Rollno")
+        print("Rollno " , Rollno)
+        studentname = request.form.get("S_Name")
+        print("studentname" ,studentname)
+        Class = request.form.get("Class")
+        print("class " , Class)
+        Address = request.form.get("Address")
+        print("address " , Address)
+        parentsnumber = request.form.get("parentsNumber")
+        print("parents number " , parentsnumber)
+        Parentsname = request.form.get("parentsName")
+        print("parentsname " , Parentsname)
+        query_vals = (Rollno,studentname,Class,Address,parentsnumber,Parentsname)
+        command_handler.execute("INSERT INTO users(Rollno,S_name,Class,Address,Parentsnumber,Parentsname) VALUES (%s,%s,%s,%s,%s,%s)",query_vals)
+        db.commit()
     
-         return render_template('student.html')
+    return render_template('student.html')
 
-@app.route('/teacher')
+@app.route('/teacher', methods=['GET', 'POST'])
 def teacher_info():
-    
+        if request.method == "POST":
+            username = request.form.get("username")
+            password = request.form.get("password")
+            print("Username: " + username)
+            print("Password: " + password)
+            query_vals = (username,password)
+            command_handler.execute("INSERT INTO users (username,password,privilage) VALUES (%s,%s,'teacher')",query_vals)
+            db.commit()
+
+
         return render_template('teacherlogin.html')
 
 

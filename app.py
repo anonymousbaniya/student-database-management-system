@@ -9,35 +9,17 @@ db = mysql.connect(host="localhost",user="root",password="",database="college")
 command_handler = db.cursor(buffered=True)
 
 @app.route('/')
-def index():
+def homepage():
     return render_template('homepage.html')
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login')
 def login():
-   
-
-   
     return render_template('loginchoose.html')
-
-
-@app.route('/admin', methods=['GET', 'POST'])
-def admin():
-    if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        print(username)
-        print(password)
-        if username == "admin" and password == "password":
-            admin_session()  
-            
-    return render_template('admin.html')
 
 
 @app.route('/student', methods=['GET', 'POST'])
 def student():
     if request.method == "POST":
-        Rollno = request.form.get("Rollno")
-        print("Rollno " , Rollno)
         studentname = request.form.get("S_Name")
         print("studentname" ,studentname)
         Class = request.form.get("Class")
@@ -48,14 +30,74 @@ def student():
         print("parents number " , parentsnumber)
         Parentsname = request.form.get("parentsName")
         print("parentsname " , Parentsname)
-        query_vals = (Rollno,studentname,Class,Address,parentsnumber,Parentsname)
-        command_handler.execute("INSERT INTO users(Rollno,S_name,Class,Address,Parentsnumber,Parentsname) VALUES (%s,%s,%s,%s,%s,%s)",query_vals)
+        query_vals = (studentname,Class,Address,parentsnumber,Parentsname)
+        command_handler.execute("INSERT INTO users(S_name,Class,Address,Parentsnumber,Parentsname) VALUES (%s,%s,%s,%s,%s)",query_vals)
         db.commit()
     
     return render_template('student.html')
 
+@app.route('/admin', methods=['GET', 'POST'])
+def admin():
+    if request.method == 'POST':
+        username = request.form.get['username']
+        print(username)
+        password = request.form.get['password']
+        print(password)
+        if username == "admin" and password == "password":
+            session['logged_in'] = True
+            cursor = connection.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM users")
+            users = cursor.fetchall()
+            return render_template('index.html', users=users)
+        else:
+            return render_template('login.html', error='Invalid username or password.')
+    return render_template('login.html')
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           # print("Delete Existing Student Account")
+           # username = input(str("Student username : "))
+           # query_vals = (username)
+           # command_handler.execute("DELETE FROM users WHERE username = %s ",query_vals)
+           # db.commit()
+           # if command_handler.rowcount < 1:
+           #     print("User not found")
+           # else:
+           #    print(username + " has been deleted")
+            
+    #return render_template('admin.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/teacher', methods=['GET', 'POST'])
-def teacher_info():
+def teacher():
         if request.method == "POST":
             username = request.form.get("username")
             password = request.form.get("password")
@@ -64,6 +106,7 @@ def teacher_info():
             query_vals = (username,password)
             command_handler.execute("INSERT INTO users (username,password,privilage) VALUES (%s,%s,'teacher')",query_vals)
             db.commit()
+            
 
 
         return render_template('teacherlogin.html')

@@ -21,10 +21,12 @@
  
 }
 .opt ul li {
+    font: normal 36px 'Cookie', cursive;
     display: inline;
     
 }
 .opt ul li a{
+    color:rgb(202, 204, 207);
     font-size: 30px;
 
 }
@@ -42,7 +44,7 @@ border-radius: 30px;
 font-weight: bold;
 padding: 10px;
 
-background-color: #fff;
+background-color: #033874;
 text-shadow: #000;
 
 }
@@ -67,5 +69,106 @@ text-shadow: #000;
     color: #c987e1;
     
 }
+.sidebar{
+    width: 80px;
+    height: calc(1vh);
+    background:linear-gradient(45deg , #5078b500 ,#311dcf00);
+    position: absolute;
+    /* top: 80px; */
+    right: 110px;
+    padding-top: 20%;
+    display: flex;
+    justify-content: space-between;
+    line-height: 50px;
+
+}
+.socials li a{
+    font-size: 35px;
+    margin-top: 25px;
+    line-height: 50px;
+    margin-left: 20px;
+    
+}
+.socials li a:hover > img {
+
+ width: 60px;
+ height: 60px;
+ 
+}
+
+.About p{
+  font-size: 20px;
+}
+
+footer{
+	position: absolute;
+    
+}
+.footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+	margin-top: 50px;
+}
+ 
+.footer-distributed .footer-left{
+	display: inline-block;
+	vertical-align: top;
+}
+ 
+.footer-distributed .footer-left{
+	width: 40%;
+}
+ 
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+.footer-distributed p{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+    font-size: 20px;
+}
+
+.footer-distributed p span{
+	color:  #5383d3;
+}
+ 
+ 
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+ 
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+
  
     

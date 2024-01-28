@@ -12,32 +12,47 @@
 <body>
 
     <div class="container" id="container">
-      
-        <div class="form-container sign-in">
-            
-                <h1>Create Account</h1>
-                <form method="POST" action="{{ url_for('student') }}">            
-                    <input type="text" name="Rollno" placeholder="Rollno">
-                    <input type="text" name="S_Name" placeholder="S_Name">
-                    <input type="text" name="Class" placeholder="Your class">
-                    <input type="text" name="Address" placeholder="Address">
-                    <input type="text" name="parentsNumber" placeholder="ParentsNumber">
-                    <input type="text" name="parentsName" placeholder="ParentsNAME">
-               <a href="face.html"><input type="submit"></a>
+        
+        <div class="form-container Register">
+            <form>
+                <img src="/static/css/istockphoto-1416145560-612x612.jpg" width="40" height="40">
+             Registration complete.
+
             </form>
+                
+                </div>
+
+        <div class="form-container sign-in">
+           <form>
+            <p>Hello Student!</p>
+           </form>
+         
         </div>
         <div class="toggle-container">
             <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Thank you for registering.</h1>
+                    <br>
+                  <p> Continue to<a href="/"> Home page</a></p>
+                </div>
              
                 <div class="toggle-panel toggle-right">
-                    <h1>Hello, Student!</h1>
-                
-                  
+                    
+                    <h1>Register Your Profile</h1>
+                    <form method="POST" action="{{ url_for('student') }} " onsubmit="handleSubmit()">
+                    <input type="text" name="S_Name" placeholder="S_Name" required>
+                    <input type="text" name="Class" placeholder="Your class" required>
+                    <input type="text" name="Address" placeholder="Address" required>
+                    <input type="text" name="parentsNumber" placeholder="ParentsNumber" required>
+                    <input type="text" name="parentsName" placeholder="ParentsNAME" required>
+                    <button type="submit" id="register">Submit</button>
+                    </form>
+                    
                 </div>
             </div>
         </div>
     </div>
 
-     
+    <script src="{{ url_for('static',filename='js/script.js')}}"></script>
 </body>
 </html>
